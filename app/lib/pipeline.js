@@ -17,8 +17,9 @@ module.exports = function(app, express){
   app.get('/items/new', items.init);
   app.post('/items', items.create);
   app.get('/items', items.index);
- // app.get('/items/:id', items.show);
- // app.post('/items/:id/delete', items.destroy);  
-  console.log('Pipeline Configured');
+  app.get('/items/:id', items.show);
+  app.post('/items/:id/delete', items.destroy);  
+  
+console.log('Pipeline Configured');
 };
 

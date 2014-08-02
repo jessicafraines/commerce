@@ -4,7 +4,7 @@ html
     meta(charset='utf-8')
     title eCommerce
     link(rel='stylesheet', href='/css/style.css')
-  body
+    body.item(style='background-color:#{item.color};')
     h1 eCommerce
     nav
       ul
@@ -13,7 +13,9 @@ html
         li: a(href='/faq') FAQ
         li: a(href='/items/new') Add Items
         li: a(href='/items/show') Show Items
+        li: a(href='/items') Items Page
 
+        
   table.table.table-hover.table-bordered
     thead
       tr
@@ -28,9 +30,8 @@ html
         th Percent Off
         th Cost
     tbody
-
-    each item in items
-      tr.item(style='background-color:#{item.color};')
+      
+      tr.item(style='background-color: white;')
         td: a(href='/items/#{item._id}')= item.name
         td= item.dimensions.l
         td= item.dimensions.w
@@ -42,3 +43,4 @@ html
         td= item.percentOff
         td= item.cost()
 
+        button Delete Item
