@@ -21,9 +21,9 @@ exports.index = function(req, res){
 };
 
 exports.show = function(req, res){
-  Item.findById(req.params.id, function(item){
-console.log(item);   
- res.render('items/show', {item:item});
+  var id = req.params.id;
+  Item.findById(id, function(item){
+    res.render('items/show', {item:item});
   });
 };
 

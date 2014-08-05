@@ -16,7 +16,7 @@ html
         li: a(href='/items') Items Page
 
         
-  table.table.table-hover.table-bordered
+  table
     thead
       tr
         th Name
@@ -42,5 +42,5 @@ html
         td= item.msrp
         td= item.percentOff
         td= item.cost()
-
-        button Delete Item
+        form(method='POST', action='/items/#{item._id}/delete')
+          button Delete Item

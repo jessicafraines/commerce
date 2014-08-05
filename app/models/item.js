@@ -23,7 +23,7 @@ Object.defineProperty(Item, 'collection', {
 });
 
 Item.prototype.cost = function(){
-  return this.msrp - (this.msrp * (this.percentOff/100));
+  return (this.msrp - (this.msrp * (this.percentOff/100))).toFixed(2);
 };
 
 Item.prototype.save = function(cb){
